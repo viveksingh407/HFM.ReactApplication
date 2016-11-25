@@ -7,8 +7,7 @@ class Content extends React.Component {
         return (
             <section className="contentSection">
                 <div className="row">
-                    <TransactionsManager />
-                    <BudgetManager />
+                    {this.props.children}
                 </div>
             </section>
        );
