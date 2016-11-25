@@ -6,7 +6,7 @@ class Content extends React.Component {
     render() {
         return (
             <section className="contentSection">
-                <div className="row">
+                <div>
                     {this.props.children}
                 </div>
             </section>

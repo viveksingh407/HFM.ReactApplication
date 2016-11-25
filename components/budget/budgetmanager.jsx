@@ -5,7 +5,7 @@ class BudgetManager extends React.Component {
         return (
             <div>
                <div>
-                   <div data-myattribute="test">Home Finance Manger</div>
+                   <div data-myattribute="test">Budget Manager</div>
                </div>
             </div>
        );
