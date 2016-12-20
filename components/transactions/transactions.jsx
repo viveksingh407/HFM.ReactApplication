@@ -4,25 +4,25 @@ class Transactions extends React.Component {
     render() {
         return (
             <div>
-                <div className="header">
-                    <div>
+                <div className="row">
+                    <div className="col-sm-2">
                         <span>Transaction</span>
                     </div>
-                    <div>
+                    <div className="col-sm-2">
                         <span>TransactionDate</span>
                     </div>
-                    <div>
+                    <div className="col-sm-2">
                         <span>TransactionAmount</span>
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <span>Transaction.</span>
+                <div className="row">
+                    <div className="col-sm-2">
+                        <span>Transaction</span>
                     </div>
-                    <div>
+                    <div className="col-sm-2">
                         <span>TransactionDate</span>
                     </div>
-                    <div>
+                    <div className="col-sm-2">
                         <span>TransactionAmount</span>
                     </div>
                 </div>

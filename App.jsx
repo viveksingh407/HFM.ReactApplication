@@ -1,10 +1,16 @@
 import React from 'react';
-import Layout from './components/layout.jsx';
+import Header from './components/header.jsx';
+import Content from './components/content.jsx';
+import Footer from './components/footer.jsx';
 
 class App extends React.Component {
     render() {
         return (
-            <Layout />
+            <div className="container">
+                <Header />
+                {this.props.children}
+                <Footer />
+            </div>
        );
     }
 }

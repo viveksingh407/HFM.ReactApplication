@@ -3,8 +3,9 @@ import Header from './header.jsx';
 import Content from './content.jsx';
 import Footer from './footer.jsx';
 
-class App extends React.Component {
+class Layout extends React.Component {
     render() {
+        console.log(this.props.children);
         return (
             <div className="container">
                 <Header />
@@ -15,4 +16,4 @@ class App extends React.Component {
     }
 }
 
-export default App;
+export default Layout;

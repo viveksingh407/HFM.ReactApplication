@@ -17,8 +17,8 @@ class Header extends React.Component {
                     </div>
                     <div id="navbar" className="navbar-collapse collapse">
                     <ul className="nav navbar-nav">
-                        <li className="active"><Link to="\transactionsmanager" >TransactionsManager</Link></li>
-                        <li><Link to="\budgetmanager">BudgetManager</Link></li>
+                        <li className="active"><Link to="transactionmanager" >TransactionsManager</Link></li>
+                        <li><Link to="budgetmanager">BudgetManager</Link></li>
                     </ul>
                     </div>
                 </div>
