@@ -8,10 +8,7 @@ class Transactions extends React.Component {
     }
 
     purchaseItemsData() {
-        var stateObj = [];
-        TransactionItems.getPurchaseItems((resultCallBackData)  => {
-            this.setState({Items: resultCallBackData });
-        });
+        TransactionItems.getPurchaseItems((resultCallBackData) => this.setState({Items: resultCallBackData }));
     }
 
     componentWillMount()
@@ -20,11 +17,6 @@ class Transactions extends React.Component {
     }
 
     render() {
-        if(this.state.Items.length !== 0)
-        {
-            console.log(this.state.Items);
-        }
-
         return (
             <div>
                 <div className="row">
