@@ -1,7 +1,30 @@
 ﻿import React from 'react';
+import TransactionItems from '../../scripts/server/transactionitems.js';
 
 class Transactions extends React.Component {
+    constructor(){
+        super();
+        this.state = {Items:[]};
+    }
+
+    purchaseItemsData() {
+        var stateObj = [];
+        TransactionItems.getPurchaseItems((resultCallBackData)  => {
+            this.setState({Items: resultCallBackData });
+        });
+    }
+
+    componentWillMount()
+    {
+        this.purchaseItemsData();
+    }
+
     render() {
+        if(this.state.Items.length !== 0)
+        {
+            console.log(this.state.Items);
+        }
+
         return (
             <div>
                 <div className="row">
