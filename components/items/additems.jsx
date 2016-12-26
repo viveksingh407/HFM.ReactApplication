@@ -1,11 +1,11 @@
 ﻿import React from 'react';
 
-class AddTransactions extends React.Component {
+class AddItems extends React.Component {
     render() {
         return (
             <div className="row">
                 <div className="row">
-                    <span>Add Transaction</span>
+                    <span>Add Item</span>
                 </div>
                 <div className="row">
                     <input type="text" />
@@ -17,4 +17,4 @@ class AddTransactions extends React.Component {
     }
 }
 
-export default AddTransactions;
+export default AddItems;

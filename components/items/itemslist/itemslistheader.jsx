@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 
-class TransactionsListHeader extends React.Component {
+class ItemsListHeader extends React.Component {
     render() {
         return (
             <div className="row">
@@ -15,4 +15,4 @@ class TransactionsListHeader extends React.Component {
     }
 }
 
-export default TransactionsListHeader;
+export default ItemsListHeader;

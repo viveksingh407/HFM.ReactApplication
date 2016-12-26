@@ -1,6 +1,6 @@
 ﻿import Fetch from 'react-fetch';
 
-var transactionsItems = {
+var itemsData = {
     getPurchaseItems: function(resultCallback)
     {
         var data = [];
@@ -11,4 +11,4 @@ var transactionsItems = {
     }
 }
 
-module.exports = transactionsItems;
+module.exports = itemsData;

@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 
-class TransactionListBody extends React.Component {
+class ItemsListBody extends React.Component {
     constructor(){
         super();
     }
@@ -27,4 +27,4 @@ class TransactionListBody extends React.Component {
     }
 }
 
-export default TransactionListBody;
+export default ItemsListBody;
