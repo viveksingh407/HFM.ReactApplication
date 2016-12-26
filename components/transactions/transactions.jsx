@@ -1,5 +1,7 @@
 ﻿import React from 'react';
 import TransactionItems from '../../scripts/server/transactionitems.js';
+import TransactionsListHeader from './transactionslist/transactionslistheader.jsx';
+import TransactionsListBody from './transactionslist/transactionslistbody.jsx';
 
 class Transactions extends React.Component {
     constructor(){
@@ -16,31 +18,20 @@ class Transactions extends React.Component {
         this.purchaseItemsData();
     }
 
+    getTransactionBody(){
+        let data = this.state.Items.map(function(data, index){
+            let itemData = {key:index, value: data["Value"]};
+            return <TransactionsListBody key={index} Items={itemData} />
+        });
+
+        return data;
+    }
+
     render() {
         return (
             <div>
-                <div className="row">
-                    <div className="col-sm-2">
-                        <span>Transaction</span>
-                    </div>
-                    <div className="col-sm-2">
-                        <span>TransactionDate</span>
-                    </div>
-                    <div className="col-sm-2">
-                        <span>TransactionAmount</span>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-sm-2">
-                        <span>Transaction</span>
-                    </div>
-                    <div className="col-sm-2">
-                        <span>TransactionDate</span>
-                    </div>
-                    <div className="col-sm-2">
-                        <span>TransactionAmount</span>
-                    </div>
-                </div>
+                <TransactionsListHeader />
+                {this.getTransactionBody()}
             </div>
        );
     }
