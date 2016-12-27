@@ -8,18 +8,18 @@ import store from "../../stores/itemstore.js";
 class Items extends React.Component {
     constructor(){
         super();
-        this.state = {Items: []};
+        //this.state = {Items: []};
     }
 
     purchaseItemsData() {
         ItemsData.getPurchaseItems((resultCallBackData) => 
         {
-            //store.dispatch({
-            //    type: 'get_items',
-            //    items: resultCallBackData
-            //});
+            store.dispatch({
+                type: 'get_items',
+                items: resultCallBackData
+            });
 
-            this.setState({Items: resultCallBackData })
+            //this.setState({Items: resultCallBackData })
         });
     }
 
@@ -31,9 +31,9 @@ class Items extends React.Component {
     getTransactionBody(){
         
         let data = [];
-        if(this.state.Items !== undefined && this.state.Items.length !== 0)
+        if(this.props.items !== undefined && this.props.items.length !== 0)
         {
-            data = this.state.Items.map(function(data, index){
+            data = this.props.items.map(function(data, index){
                 let itemData = {key:index, value: data["Value"]};
                 return <ItemsListBody key={index} Items={itemData} />
             })
@@ -52,12 +52,10 @@ class Items extends React.Component {
     }
 }
 
-//const mapStateToProps = function(store) {
-//    return {
-//        items:[]
-//        //items: store.itemReducer.items
-//    };
-//}
+const mapStateToProps = function(store) {
+    return {
+        items: store.itemState.items
+    };
+}
 
-//export default connect(mapStateToProps)(Items);
-export default Items;
+export default connect(mapStateToProps)(Items);

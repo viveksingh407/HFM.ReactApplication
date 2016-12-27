@@ -7,8 +7,6 @@ import routes from "./router/router.js";
 import 'bootstrap/dist/css/bootstrap.css';
 import './content/styles/content.css';
 
-//console.log(<Router history={browserHistory} routes={routes} />)
-
 ReactDOM.render(
     <Provider store={store}>
         <Router history={browserHistory} routes={routes} />

@@ -14,18 +14,19 @@ const itemReducer = function(state, action) {
         case 'get_items':
             return Object.assign({}, state, { items: action.items });
     }
+
     return state;
 }
 
 //The Widget Reducer
-//const widgetReducer = function(state = {}, action) {
-//    return state;
-//}
+const widgetReducer = function(state = {}, action) {
+    return state;
+}
 
 // Combine Reducers
 const reducers = combineReducers({
-    itemState: itemReducer
-    //widgetState: widgetReducer
+    itemState: itemReducer,
+    widgetState: widgetReducer
 });
 
 const store = createStore(reducers);
