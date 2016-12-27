@@ -1,8 +1,8 @@
 ﻿import React from 'react';
 import { connect } from 'react-redux';
 import ItemsData from '../../scripts/server/items.js';
-import ItemsListHeader from './itemslist/itemslistheader.jsx';
-import ItemsListBody from './itemslist/itemslistbody.jsx';
+import ItemsListHeader from './itemslist/itemslistheader.js';
+import ItemsListBody from './itemslist/itemslistbody.js';
 import store from "../../stores/itemstore.js";
 
 class Items extends React.Component {
@@ -36,7 +36,7 @@ class Items extends React.Component {
             data = this.state.Items.map(function(data, index){
                 let itemData = {key:index, value: data["Value"]};
                 return <ItemsListBody key={index} Items={itemData} />
-                })
+            })
         };
 
         return data;

@@ -9,10 +9,8 @@ import './content/styles/content.css';
 
 //console.log(<Router history={browserHistory} routes={routes} />)
 
-//ReactDOM.render(
-//    <Provider store={store}>
-//        <Router history={browserHistory} routes={routes} />
-//    </Provider>,
-//    document.getElementById('root'));
-
-ReactDOM.render(<Router history={browserHistory} routes={routes} />, document.getElementById('app'));
+ReactDOM.render(
+    <Provider store={store}>
+        <Router history={browserHistory} routes={routes} />
+    </Provider>,
+    document.getElementById('app'));
