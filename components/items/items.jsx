@@ -1,16 +1,26 @@
 ﻿import React from 'react';
+import { connect } from 'react-redux';
 import ItemsData from '../../scripts/server/items.js';
 import ItemsListHeader from './itemslist/itemslistheader.jsx';
 import ItemsListBody from './itemslist/itemslistbody.jsx';
+import store from "../../stores/itemstore.js";
 
 class Items extends React.Component {
     constructor(){
         super();
-        this.state = {Items:[]};
+        this.state = {Items: []};
     }
 
     purchaseItemsData() {
-        ItemsData.getPurchaseItems((resultCallBackData) => this.setState({Items: resultCallBackData }));
+        ItemsData.getPurchaseItems((resultCallBackData) => 
+        {
+            //store.dispatch({
+            //    type: 'get_items',
+            //    items: resultCallBackData
+            //});
+
+            this.setState({Items: resultCallBackData })
+        });
     }
 
     componentWillMount()
@@ -19,10 +29,15 @@ class Items extends React.Component {
     }
 
     getTransactionBody(){
-        let data = this.state.Items.map(function(data, index){
-            let itemData = {key:index, value: data["Value"]};
-            return <ItemsListBody key={index} Items={itemData} />
-        });
+        
+        let data = [];
+        if(this.state.Items !== undefined && this.state.Items.length !== 0)
+        {
+            data = this.state.Items.map(function(data, index){
+                let itemData = {key:index, value: data["Value"]};
+                return <ItemsListBody key={index} Items={itemData} />
+                })
+        };
 
         return data;
     }
@@ -37,4 +52,12 @@ class Items extends React.Component {
     }
 }
 
+//const mapStateToProps = function(store) {
+//    return {
+//        items:[]
+//        //items: store.itemReducer.items
+//    };
+//}
+
+//export default connect(mapStateToProps)(Items);
 export default Items;

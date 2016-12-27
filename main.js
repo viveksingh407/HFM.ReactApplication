@@ -1,20 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
-import App from './App.jsx';
-import Content from './components/content.jsx';
-import ItemsManager from './components/items/itemsmanager.jsx';
-import BudgetManager from './components/budget/budgetmanager.jsx';
+import { Provider } from 'react-redux';
+import { Router, browserHistory } from 'react-router';
+import store from "./stores/itemstore.js";
+import routes from "./router/router.js";
 import 'bootstrap/dist/css/bootstrap.css';
 import './content/styles/content.css';
 
-ReactDOM.render((
-    <Router history={browserHistory}>
-        <Route path="/" component={App}>
-            <Route component={Content} >
-                <IndexRoute component={ItemsManager}/>
-                <Route path="/itemsmanager" component={ItemsManager}/>
-                <Route path="/budgetmanager" component={BudgetManager}/>
-            </Route>
-        </Route>
-    </Router>), document.getElementById('app'));
+//console.log(<Router history={browserHistory} routes={routes} />)
+
+//ReactDOM.render(
+//    <Provider store={store}>
+//        <Router history={browserHistory} routes={routes} />
+//    </Provider>,
+//    document.getElementById('root'));
+
+ReactDOM.render(<Router history={browserHistory} routes={routes} />, document.getElementById('app'));
